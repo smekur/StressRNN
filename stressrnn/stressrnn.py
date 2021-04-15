@@ -272,7 +272,7 @@ class StressRNN(object):
                     unstressed_word = ''
                 if unstressed_word == token.lower():
                     stress_position = stressed_words[0].find(stress_symbol)
-                    stressed_token = token[:stress_position] + stress_symbol + token[stress_position:]
+                    stressed_token = token[:stress_position-1] + stress_symbol + token[stress_position-1:]
                     stressed_text.append(stressed_token)
                     stressed_words = stressed_words[1:]
                 else:
